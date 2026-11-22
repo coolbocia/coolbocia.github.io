@@ -43,11 +43,27 @@
             }
 
             body {
-                display: block;
-                padding: 8px;
+                display: flex;
+                padding: 2.5rem;
                 flex: 1;
                 max-width: 1200px;
                 margin: 0 auto;
+                gap: 2rem;
+
+                & > * {
+                    flex: 1;
+                }
+            }
+
+            @media (max-width: 768px) {
+                body {
+                    flex-direction: column;
+                }
+
+                main,
+                aside {
+                    flex: none;
+                }
             }
 
             h1,
@@ -57,12 +73,16 @@
             }
 
             h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
 
             h2 {
                 font-size: 1.75rem;
-                margin-bottom: 0.5rem;
+                margin: 0 0 0.5rem;
+            }
+
+            * + h2 {
+                margin-top: 0.5rem;
             }
 
             a,
@@ -90,19 +110,6 @@
                 }
             }
 
-            main {
-                display: flex;
-                gap: 2rem;
-                justify-content: center;
-                flex-direction: row;
-                padding: 2rem;
-
-                section {
-                    flex: 1;
-                    display: block;
-                }
-            }
-
             ul {
                 display: block;
                 list-style: none;
@@ -111,31 +118,35 @@
             li {
                 display: list-item;
             }
+
+            main,
+            aside {
+                display: flex;
+                flex-direction: column;
+            }
         </style>
     </head>
     <body>
+        <aside>
+            <h1>coolbocia's space</h1>
+            <p>Hi there!</p>
+            <h2>links</h2>
+            <ul>
+                <li><a href="https://github.com/coolbocia">github</a></li>
+                <li>
+                    <a href="https://tangled.org/coolbocia.dev">tangled</a>
+                </li>
+                <li>
+                    <a
+                        href="https://witchsky.app/profile/did:plc:fqps6m2okxeqpy7aioqky3am"
+                        >bluesky</a
+                    >
+                </li>
+            </ul>
+        </aside>
         <main>
-            <section class="left">
-                <h1>coolbocia's space</h1>
-                <p>Hi there!</p>
-                <h2>links</h2>
-                <ul>
-                    <li><a href="https://github.com/coolbocia">github</a></li>
-                    <li>
-                        <a href="https://tangled.org/coolbocia.dev">tangled</a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://witchsky.app/profile/did:plc:fqps6m2okxeqpy7aioqky3am"
-                            >bluesky</a
-                        >
-                    </li>
-                </ul>
-            </section>
-            <section class="right">
-                <h2>projects</h2>
-                <p>coming soon</p>
-            </section>
+            <h2>projects</h2>
+            <p>coming soon</p>
         </main>
     </body>
 </html>
